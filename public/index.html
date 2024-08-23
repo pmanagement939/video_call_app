@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Call Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <div id="home">
+            <h1>Welcome to Video Call</h1>
+            <input type="text" id="adminPassword" placeholder="Enter Admin Password (for room creation)">
+            <input type="text" id="roomId" placeholder="Enter Room ID or Join Existing">
+            <button id="createRoom">Create Room</button>
+            <button id="joinRoom">Join Room</button>
+            <p>Note: The room can only hold a limited number of participants.</p>
+        </div>
+        <div id="room" class="hidden">
+            <h1>Room ID: <span id="currentRoomId"></span></h1>
+            <div id="videos">
+                <video id="localVideo" autoplay muted></video>
+                <video id="remoteVideo" autoplay></video>
+            </div>
+            <div id="controls">
+                <button id="startCall">Start Call</button>
+                <button id="endCall">End Call</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include the Socket.IO client library -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
